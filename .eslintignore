@@ -1,0 +1,5 @@
+lint-staged.config.js
+.prettierrc.js
+.eslintrc.js
+vite.config.ts
+commitlint.config.js
