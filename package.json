@@ -13,7 +13,10 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "format": "prettier --write src/**/*.{ts,tsx}",
-    "lint": "eslint --fix src/**/*.{ts,tsx}"
+    "lint": "eslint --fix src/**/*.{ts,tsx}",
+    "test": "jest --silent",
+    "docker:build": "docker build --platform linux/amd64 -t christiangama/go-booking-web .",
+    "docker:run": "docker run -p 8080:80 christiangama/go-booking-web"
   },
   "dependencies": {
     "react": "^18.0.0",
@@ -22,21 +25,33 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
+    "@swc/core": "^1.2.210",
+    "@swc/jest": "^0.2.21",
+    "@testing-library/dom": "^8.14.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/user-event": "^14.2.1",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "@typescript-eslint/parser": "^5.30.5",
     "@vitejs/plugin-react": "^1.3.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.19.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.0",
-    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
     "husky": "^8.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^28.1.2",
+    "jest-environment-jsdom": "^28.1.2",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "typescript": "^4.6.3",
-    "vite": "^2.9.9"
+    "vite": "^2.9.9",
+    "vite-plugin-rewrite-all": "^0.1.2"
   }
 }
